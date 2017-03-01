@@ -81,9 +81,11 @@ Ta thường dùng công cụ Snipping Tool có sẵn trên Window để chụp 
 ###3.3.Ký thự in đậm, in nghiêng 
 * Để in đậm một đoạn ký tự ta sử dụng cú pháp:
 `**Khi nào có người yêu**`
+
 **Khi nào có người yêu**
 * Để in nghiêng một đoạn ký tự ta sử dụng cú pháp:
 `*Đẹp trai thế lày sao vẫn chưa có gấu*`
+
 *Đẹp trai thế lày sao vẫn chưa có gấu*<a name="II.3.4"></a>
 
 ###3.4.Trích dẫn, bo chữ 
