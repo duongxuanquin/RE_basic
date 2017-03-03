@@ -23,9 +23,9 @@
 >
 >---------------------------------
 
- <a name="I.1"></a>
+ <a name="I"></a>
 #I.Github là gì? Dùng để làm gì?
-##1.Github là gì? 
+##1.Github là gì?<a name="I.1"></a> 
 **GitHub** là một dịch vụ cung cấp kho lưu trữ mã nguồn Git dựa trên nền web cho các dự án phát triển phần mềm. GitHub cung cấp cả phiên bản trả tiền lẫn miễn phí cho các tài khoản. Các dự án mã nguồn mở sẽ được cung cấp kho lưu trữ miễn phí.
 **Github** đã trở thành một yếu có sức ảnh hưởng trong cộng đồng phát triển mã nguồn mở. Thậm chí nhiều nhà phát triển đã bắt đầu xem nó là một sự thay thế cho sơ yếu lý lịch và một số nhà tuyển dụng yêu cầu các ứng viên cung cấp một liên kết đến tài khoản **Github** để đánh giá ứng viên.
 ![](https://og.github.com/mark/github-mark@1200x630.png )
