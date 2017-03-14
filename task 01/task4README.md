@@ -1,11 +1,11 @@
 # BÁO CÁO
 # NGUỒN THAM KHẢO :[tào lao](http://bit.ly/2iryedL)
-#NGƯỜI THỰC HIỆN : DƯƠNG XUÂN QUIN
+# NGƯỜI THỰC HIỆN : DƯƠNG XUÂN QUIN
 ---
 
->#Chương 6 :CÁC LỆNH ĐIỀU KHIỂN RẺ NHÁNH.
+># Chương 6 :CÁC LỆNH ĐIỀU KHIỂN RẺ NHÁNH.
 
->##MỤC LỤC
+>## MỤC LỤC
 
 >[**I.Một ví dụ về lệnh nhảy.**](#I)
 
@@ -15,7 +15,7 @@
 >    <li>[1.Các cấu trúc rẽ nhánh.](#III.1)</li>
 >    <li>[2.Các cấu trúc lặp.](#III.2)</li></ul>
 ---
-##I.Một số ví dụ về lệnh nhảy.<a name="I"></a>
+## I.Một số ví dụ về lệnh nhảy.<a name="I"></a>
 **Chương trình PGM6_1.ASM**
 
 ```sh
@@ -166,12 +166,12 @@ CMP      BX,CX          ; SX lớn hơn?
 JLE      NEXT           ; không, tiếp tục
 MOV      CX,BX          ; đúng, đưa BX vào CX
 ```
-##III.Cấu trúc ngôn ngữ bậc cao.<a name="III"></a>
+## III.Cấu trúc ngôn ngữ bậc cao.<a name="III"></a>
   
   Chúng tôi đã có lần nói rằng cấu trúc nhảy có thể được dùng để thực hiện 
 các công việc rẽ nhánh và lặp. Tuy nhiên do các lệnh nhảy quá sơ khai nên râts khó mã hóa một thuật toán nhất là đói với người kới lập trình.
 
-###1.Các cấu trúc rẽ nhánh.<a name="III.1"></a>
+### 1.Các cấu trúc rẽ nhánh.<a name="III.1"></a>
   
   Tong các ngôn ngữ bậc cao, các cấu trúc rẽ nhánh của một chương trình để 
 chọn ra các đường dẫn khác nhau và phụ thuộc vào các điều kiện.Phần này chúng ta sẽ xem xét ba cấu trúc:
@@ -218,7 +218,7 @@ END_CASE
 Ở đây điều_kiện_1 và điều_kiện_2 có thể đúng hoặc sai.Đầu tiên chúng ta hãy xem xét điều kiện ADN (ADN condition), sau đó đến điều kiện OR (OR condition).    
 
 ```
-###2.Các cấu trúc lặp.<a name="III.2"></a>
+### 2.Các cấu trúc lặp.<a name="III.2"></a>
 
 **Vòng lặp FOR.**
    
