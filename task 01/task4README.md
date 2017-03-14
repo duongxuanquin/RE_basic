@@ -218,6 +218,7 @@ END_CASE
 ###2. Các cấu trúc lặp.<a name="III.2"></a>
 
 **Vòng lặp FOR.**
+   
    Đây là một cấu trúc lặp  mà số lần lặp các dọng lệnh đã biết trước (vong 
 lặp điều khiển bằng biến đếm ).Dạng mã lệnh giải:
 ```sh
