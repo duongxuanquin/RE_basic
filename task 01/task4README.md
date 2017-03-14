@@ -10,9 +10,7 @@
 >[**II.Các lệnh nhảy có điều kiện**](#II)
 
 >[**III.Cấu trúc ngôn ngữ bậc cao.**](#III)<ul>
-
 >    <li>[1.Các cấu trúc rẽ nhánh.](#III.1)</li>
-
 >    <li>[2.Các cấu trúc lặp.](#III.2)</li></ul>
 ---
 ##I.Một số ví dụ về lệnh nhảy.<a name="I"></a>
@@ -218,7 +216,7 @@ END_CASE
 Ở đây điều_kiện_1 và điều_kiện_2 có thể đúng hoặc sai.Đầu tiên chúng ta hãy xem xét điều kiện ADN (ADN condition), sau đó đến điều kiện OR (OR condition).    
 
 ```
-###2. Các cấu trúc lặp.<a name="III.2"></a>
+###2.Các cấu trúc lặp.<a name="III.2"></a>
 
 **Vòng lặp FOR.**
    
