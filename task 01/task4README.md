@@ -288,5 +288,398 @@ giải của nó là:
         các dòng lệnh
      UNTIL điều_kiện   
 ```
+﻿
+
+# Bài tập
+## 2: 
+
+		.STACK 100h
+
+		.MODEL  small 
+
+		.DATA
+
+		MSG DB  'nhap ky tu : $'
+
+		.CODE
+
+		MAIN PROC
+
+		;khoi tao ds
+
+			mov ax,@data
+
+			mov ds,ax
+
+		;msg
+
+			lea dx,msg
+
+			mov ah,9
+
+			int 21h
+
+		;enter
+
+
+		case_:
+
+			mov ah,1
+
+			int 21h
+
+		;case
+
+
+			cmp al,'A'
+
+			je active1_
+
+			cmp al,'B'
+
+			je active2_
+
+			jmp dos_
+
+		;active1
+
+		active1_:
+
+			mov dl,0ah
+
+			mov ah,2
+
+			int 21h
+
+			jmp case_
+
+		;active2
+
+		active2_:
+
+			mov dl,0dh
+
+			mov ah,2
+
+			int 21h
+
+			jmp case_
+
+		;dos
+
+		dos_:
+
+			mov ah,4ch
+
+			int 21h
+
+			main endp
+
+			end main
+
+
+
+## 4.
+
+
+a)
+
+ 	TITLE 	Bài toán tính tổng DX= 1+5+9+...n cộng 50 lần như thế
+	.STACK 100h
+	.MODEL  small 
+	.DATA
+	.CODE
+	MAIN PROC
+	MOV 	BX,1    ; KHOI TAO GIA TRI
+	MOV 	AX,0
+	MOV 	DX,0
+	LAP:
+	CMP 	AX,50  	;SO SÁNH AX VỚI 50
+	JE 	THOAT 		; NẾU AX = 50 THÌ THOAT
+	ADD 	DX,BX 	;NẾU AX CHƯA BẰNG 50 THÌ CỘNG BX CHO DX
+	ADD 	BX,4 	; KHỞI TẠO TIẾP GIÁ TRỊ CHO BX=BX+4
+	INC 	AX 		; TĂNG BIẾN ĐẾM THÊM 1 
+	LOOP 	LAP
+	THOAT:
+	MOV 	AH,4CH
+	INT 	21H
+	MAIN    ENDP
+	END MAIN
+	;bài toán tính tổng DX= 1+5+9+...n cộng 50 lần như thế
+	
+
+
+b)
+
+	TITLE 	Nhập 1 ký tự và hiển thị nó 80 lần ở dòng tiếp theo
+	.DATA
+	MSG 	DB	0AH,0DH,'$'
+	X      dw  ?'$'
+	.code
+	main	proc
+	MOV 	AX,@DATA
+	MOV	    DS,AX
+	;nhan vao 1 ky tu
+	MOV 	AH,1
+	INT 	21H
+	MOV     X,AX
+	;xuong dong va ve dau dong
+	LEA 	DX,MSG
+	MOV 	AH,9
+	INT 	21H
+	;IN RA
+	MOV 	CX,80	;KHOI TAO BIEN DEM
+	LAP:           
+	LEA     DX,M1
+	MOV 	AH,9
+	INT 	21H
+	LOOP 	LAP
+	;ket thuc
+	MOV 	AH,4CH
+	INT	    21H
+	main    endp
+	end main
+	.DATA
+	MSG 	DB	0AH,0DH,'$'
+	m1      dw  ?'$'
+	.code
+	main	proc
+	MOV 	AX,@DATA
+	MOV	    DS,AX
+	;nhan vao 1 ky tu
+	MOV 	AH,1
+	INT 	21H
+	MOV     M1,AX
+	;xuong dong va ve dau dong
+	LEA 	DX,MSG
+	MOV 	AH,9
+	INT 	21H
+	;IN RA
+	MOV 	CX,80	;KHOI TAO BIEN DEM
+	LAP:           
+	LEA     DX,X
+	MOV 	AH,9
+	INT 	21H
+	LOOP 	LAP
+	;ket thuc
+	MOV 	AH,4CH
+	INT	    21H
+	main    endp
+	end main`
+
+
+
+c)
+
+	TITLE 	nhập vào 5 ký tự mật khẩu sau đó trở về đầu hàng và chèn lại nó bằng 5 dấu 'x'
+	.STACK  100H
+	.DATA
+	.MODEL  SMALL
+	.code
+	main	proc
+	MOV	CX,5
+	MK:
+	MOV 	AH,1
+	INT	    21H
+	LOOP	MK
+	;tro ve dau dong
+	MOV 	AH,2
+	MOV 	DX,0DH
+	INT 	21H
+	;GHI DE LEN
+	MOV 	CX,5
+	PRINT:
+	MOV 	DX,'X'
+	MOV 	AH,2
+	INT 	21H
+	LOOP    PRINT
+	;KET THUC
+	MOV 	AH,4CH
+	INT 	21H
+	main    endp
+	end main
+
+## 5 :
+
+	.model small
+	.stack 100h
+	.data
+	X1 db 0dh,0ah,'nhap so thu nhat: $'
+	X2 db 0dh,0ah,'nhap so thu hai: $'
+	X3 db 0dh,0ah,'$ '
+	a dw ?
+	b dw ?
+	.code
+	main proc
+    	mov ax,@data
+    	mov ds, ax
+    	;nhap_a
+    	lea dx,X1
+    	mov ah,9
+    	int 21h
+    	;
+    	mov ah,1
+    	int 21h
+    	sub al, 30h
+    	mov a, ax
+    	;nhap_b
+    	lea dx,X2
+    	mov ah,9
+    	int 21h
+    	;
+    	mov ah,1
+    	int 21h
+    	sub al, 30h
+    	mov b, ax
+    	;chuyen
+    	mov ax, a
+    	sub ax,100h
+    	mov bx, b
+    	sub bx,100h
+    	;div
+    	mov cx, 0h
+    	while_:
+    	cmp ax,bx
+    	jnge end_while
+    	add cx,1h
+    	sub ax, bx
+    	jmp while_
+    	end_while:
+    	;
+    	lea dx,X3
+    	mov ah,9
+    	int 21h
+    	;
+    	mov dx, cx
+    	add dl,30h
+    	mov ah,2
+    	int 21h
+    	;dos
+    	mov ah,4ch
+    	int 21h
+    	main endp
+	end main
+	;khởi tạo thương số bằng 0
+	;while số bị chia >= số chia
+	;tăng thương số
+	;trừ bớt số chia từ số bị chưa
+	;end_while
+	;AX: số bị chia, BX: số chia, CX: thương số`
+
+## 6 :
+
+
+	.model small
+	.stack 100h
+	.data
+	M1  DW  'HAY NHAP SO THU NHAT$',0DH,0AH
+	M2  DW  'HAY NHAP SO THU HAI $',0AH,0DH 
+	M3  DW  'TICH HAI SO LA $'0AH,0DH
+	a	dW	?
+	b	dW  ?
+	C   DW  ?
+	.code
+	main	proc 
+    	;khoi tao ds
+    	MOV     AX,@DATA
+    	MOV     DS,AX
+	;nhap vao a 
+    	LEA     DX,M1
+    	MOV     AH,9       
+    	INT     21H
+    	MOV	    AH,1    ;gia tri cua a duoc luu o ax
+    	INT	    21H
+    	SUB     AX,30H
+   	 MOV	    A,AX    ;gan gia tri cua ax cho bien a
+	;nhap vao so b
+    	LEA     DX,M2
+   	MOV     AH,9       
+  	INT     21H
+    	MOV	    AH,1    ;gia tri cua b nam trong ax
+    	INT 	21H
+    	SUB     AX,30H
+    	MOV     B,AX    ;gan gia tri ax cho b
+	; GAN GIA TRI
+    	MOV	    BX,B    ;chuyen gia tri cua b cho bx
+    	MOV	    AX,A    ;chuyen gia tri cua a cho ax
+	;nhan AX VAO BX
+    	MOV	    C,0     ;khoi tao tich =0
+    	LAP: 
+    	ADD	    C,AX    ;neu bx khac 0 thi cong c them voi ax
+    	DEC	    BX      ;tru gia tri cua b di 1           
+    	CMP	    BX,0    ;so sanh bx voi 0
+    	JG	    LAP     ;neu bx >0 thi nhay den LAP
+   
+	;IN VA THOAT
+    	LEA 	DX,M3
+    	MOV 	AH,9
+    	INT 	21H
+    	MOV 	DX,C        ;gan gia tri cua c cho dx 
+    	ADD 	DX,30H
+    	MOV 	AH,2
+    	int 	21h         ;chuan bi hien thi no
+    	;THOAT
+    	MOV		AH,4CH
+    	INT		21H
+    	MAIN    ENDP
+	END MAIN
+  	;BAI TOAN AX NHAN BX`
+
+## 7 :
+
+	.STACK 100h
+	.MODEL  small 
+	.DATA
+	X1 db 0dh,0ah,'Câu A: $'
+	X2 db 0dh,0ah,'Câu B: $'
+	tmp dw ?
+	.CODE
+	MAIN PROC
+    	mov ax,@data
+    	mov ds,ax
+    	;cau a
+    	lea dx,X1
+    	mov ah,9
+    	int 21h
+   	 ;
+   	 mov ax, 0h;
+    	mov tmp, ax
+    	caua:
+        	mov ah,1
+        	int 21h
+        	mov ax, tmp
+        	inc ax
+        	mov tmp, ax
+        	mov ax,tmp
+        	cmp ax,50h
+    	loope caua
+        	cmp al,' '
+    	loope caua
+    	;finisha
+    	;caub
+    	lea dx,X2
+    	mov ah,9
+    	int 21h
+    	;
+    	mov ax,0h
+    	mov tmp,ax
+    	caub:
+        	mov ah,1
+        	int 21h
+        	mov ax, tmp
+        	inc ax
+        	mov tmp, ax
+        	;
+        	mov ax,tmp
+        	cmp ax,50h
+    	loopne caub
+        	cmp al,0dh
+    	loopne caub
+    	;dos
+    	mov ah,4ch
+    	int 21h
+   	main endp
+   	end main
+   
 
 `THE END`
